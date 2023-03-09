@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import apiRouter from './api/api-router';
 
 const app = express();
 
@@ -11,5 +12,6 @@ app.get('/', (req, res) => {
 });
 
 app.use(express.json());
+app.use('/api/v1', apiRouter);
 
 export default app;
